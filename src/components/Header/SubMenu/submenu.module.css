@@ -1,0 +1,47 @@
+.sub-menu {
+    width: 100%;
+    max-width: 270px;
+    margin-top: 160px;
+
+}
+
+.sub-menu nav {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+.sub-menu a {
+    color:var(--color-orange);
+    text-decoration: none;
+    letter-spacing: 1.3px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color:rgba(255,255,255, 0);
+    border-width:1px;
+    margin-bottom:5px;
+    transition: border-color 0.2s ease-in;
+
+
+}
+
+.sub-menu a {
+    border-width: 2px;
+    border-color:var(--color-orange);
+}
+
+.sub-menu a.current-page {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    color:white;
+}
+
+
+
+
+@media only screen and (max-width: 680px) {
+    .sub-menu nav {
+        justify-content: space-around;
+    }
+
+}

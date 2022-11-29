@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: var(--color-blue);*/
+    /*background:linear-gradient(180deg, rgba(91,195,235,0.17) 0%, rgba(139,213,241,0.45) 99.98%, #ffffff 99.99%, rgba(255,255,255,0.99) 100%);*/
+    height:500px;
+    width: 90%;
+    background-image: url("../../../public/img/shutterstock_110793839.jpg");
+    background-size:cover;
+    background-position:center ;
+    position: relative;
+    justify-content: flex-start;
+    z-index:10;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.46);
+}
+
+/*.header .gradient-white {*/
+/*    background: rgb(2,0,36);*/
+/*    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);*/
+/*    position: absolute;*/
+/*    bottom:0px;*/
+/*    width: 100%;*/
+/*    height: 150px;*/
+/*}*/

@@ -1,0 +1,66 @@
+.flightdatacard {
+    background-color:white;
+    min-width: 400px;
+    width: 200px;
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top:20px;
+    margin-bottom:20px;
+
+
+
+}
+
+.data-top {
+    padding-bottom: 5px;
+    border-bottom:1px solid black;
+}
+.data-top .iata {
+    font-weight: bold;
+    text-align: center;
+    font-size:40px;
+}
+
+.data-top .location {
+    text-align: center;
+    font-size: 28px;
+}
+.data-top
+.location
+.country-code {
+    font-size: 16px;
+}
+
+.data-center {
+    display: flex;
+    justify-content: space-around;
+    padding-top:10px;
+    font-size: 22px;
+}
+
+.data-center .actual,
+.data-center .scheduled {
+    text-align: center;
+}
+
+.actual {
+    font-weight: bold;
+}
+
+.label {
+    font-size:14px;
+
+}
+
+.flightdatacard .flightdatacard-flight {
+    padding: 10px;
+}
+.flightdatacard-wx {
+    background-color: var(--color-blue);
+    color: white;
+    padding:10px;
+    border-radius: 0px 0px 5px 5px;
+}
+.old-actual-time {
+    text-decoration: line-through;
+}

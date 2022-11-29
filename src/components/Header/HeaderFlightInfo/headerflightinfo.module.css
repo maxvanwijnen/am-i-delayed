@@ -1,0 +1,45 @@
+.header-flight-info {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:50px;
+}
+
+.header-flight-info
+.flight-id {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+
+}
+
+.header-flight-info
+.flight-id
+.status {
+    background-color:var(--color-red);
+    color: white;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 17px;
+    height: fit-content;
+    font-weight: normal;
+    margin-top:-10px;
+    margin-left:200px;
+    position: absolute;
+
+}
+
+.header-flight-info
+.airline {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+
+}
