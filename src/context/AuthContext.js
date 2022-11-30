@@ -16,52 +16,97 @@ function AuthContextProvider({children}){
         isAuth: false,
         user: null,
     })
+
+    const [finishedLoading, toggleFinishedLoading] = useState(false);
+
     const [jwtToken, setJwtToken] = useState();
 
 
 
     useEffect(()=>{
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
+        const authFB = getAuth();
+        onAuthStateChanged(authFB, (user) => {
             if (user) {
-                console.log('tralala')
-                console.log(user)
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                const uid = user.uid;
-                console.log(uid)
-                setAuth({
-                    ...auth,
-                    isAuth: true
-                })
+                const user = getAuth().currentUser;
+
+
+                console.log('hola')
+
+                setUserInfo();
+
+                toggleFinishedLoading(true)
             } else {
                 console.log('user is uitgeloegd')
-                // ...
+                toggleFinishedLoading(true)
+
             }
         });
+
     },[]);
 
     const navigate = useNavigate();
 
+
+    const setUserInfo = () => {
+
+        const user = getAuth().currentUser;
+
+
+        console.log('hay')
+
+        if (user !== null) {
+
+            let freshUserInfo = {};
+            user.providerData.forEach((profile) => {
+                console.log("Sign-in provider: " + profile.providerId);
+                console.log("  Provider-specific UID: " + profile.uid);
+                console.log("  Name: " + profile.displayName);
+                console.log("  Email: " + profile.email);
+                console.log("  Photo URL: " + profile.photoURL);
+                freshUserInfo = {
+                    ...freshUserInfo,
+                    email: profile.email,
+                    name: profile.displayName
+                }
+            });
+
+            setAuth({
+                ...auth,
+                isAuth:true,
+                user: {
+                    ...freshUserInfo
+                }
+            })
+
+        }
+    }
+
     function login(email,password) {
 
-        const auth = getAuth();
+        const authFB = getAuth();
 
-        signInWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(authFB, email, password)
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
+
+                console.log('userinfo')
+                console.log(user.providerData)
 
                 // ...
                 setAuth({
                     ...auth,
                     isAuth:true,
-                    user:'Max',
+                    user:{
+                        email:user.providerData[0].email,
+                        displayName:user.providerData[0].displayName,
+                        phone:user.providerData[0].phoneNumber
+                    },
                 });
 
 
                 //Get tokenId
-                auth.currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+                authFB.currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
                     setJwtToken(idToken);
                 }).catch(function(error) {
                     // Handle error
@@ -80,8 +125,8 @@ function AuthContextProvider({children}){
 
 
     function logout(){
-        const auth = getAuth()
-        signOut(auth).then(() => {
+        const authFB = getAuth()
+        signOut(authFB).then(() => {
             setAuth({
                 ...auth,
                 isAuth:false,
@@ -105,7 +150,7 @@ function AuthContextProvider({children}){
 
     return (
         <AuthContext.Provider value={contextData}>
-            {children}
+            {finishedLoading && children}
         </AuthContext.Provider>
     );
 }

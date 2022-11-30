@@ -5,46 +5,13 @@ import { getAuth } from "firebase/auth";
 
 export const Profile = () => {
 
-    const { funcRegister } = useContext(AuthContext);
+    const { funcRegister,  auth } = useContext(AuthContext);
+    const { email, displayName, phone } = auth.user;
 
 
     const [fields, setFields] = useState({
-        email:""
+        email: email
     });
-
-
-    useEffect(()=>{
-        const auth = getAuth();
-        const user = auth.currentUser;
-
-        console.log('hola')
-
-        if (user !== null) {
-            console.log('niet null toch')
-            let freshUserInfo = {};
-            user.providerData.forEach((profile) => {
-                console.log("Sign-in provider: " + profile.providerId);
-                console.log("  Provider-specific UID: " + profile.uid);
-                console.log("  Name: " + profile.displayName);
-                console.log("  Email: " + profile.email);
-                console.log("  Photo URL: " + profile.photoURL);
-                freshUserInfo = {
-                    ...freshUserInfo,
-                    email: profile.email,
-                    name: profile.displayName
-                }
-            });
-            setFields({
-                ...fields,
-                ...freshUserInfo
-            })
-
-        }
-
-    },[])
-
-    console.log('que')
-    console.log(fields)
 
 
 
