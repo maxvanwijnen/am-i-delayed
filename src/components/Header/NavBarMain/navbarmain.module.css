@@ -12,13 +12,18 @@
     display: flex;
     border-radius: 5px;
     gap:10px;
+    align-items: center;
 
 
 }
 .nav-bar-main .link-container a, svg {
     padding:15px;
+    display: flex;
+    align-items: center;
 }
-
+.nav-bar-main .link-container a:last-child {
+    border-left:1px solid grey;
+}
 .link-container > img,
 .link-container > svg:first-child {
     border-right:1px solid #c9c9c9;

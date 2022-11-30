@@ -1,4 +1,7 @@
 .hamburger-menu {
+    display: flex;
+    align-items: center;
+    padding-right:10px;
 
 }
 .hamburger-menu:hover {
@@ -31,5 +34,6 @@
     width: 80%;
     z-index: 20;
     border-radius: 5px;
+    display: flex;
 }
 
