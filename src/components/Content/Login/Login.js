@@ -20,6 +20,7 @@ export const Login = () => {
 
     return (
         <form className={css['login-form']} onSubmit={(e)=>submit(e)}>
+            <h2>Login</h2>
             <input type="text" name="username"/>
             <input type="password" name="password" />
             <button type="submit">Inlogen</button>
