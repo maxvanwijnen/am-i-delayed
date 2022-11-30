@@ -1,18 +1,53 @@
-import react, {useContext, useState} from "react";
-import css from './register.module.css';
+import react, {useContext, useEffect, useState} from "react";
+import css from './profile.module.css';
 import {AuthContext} from "../../../context/AuthContext";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
-export const Register = () => {
+export const Profile = () => {
 
     const { funcRegister } = useContext(AuthContext);
 
 
     const [fields, setFields] = useState({
-        email:"",
-        password:"",
-        password2:""
+        email:""
     });
+
+
+    useEffect(()=>{
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+        console.log('hola')
+
+        if (user !== null) {
+            console.log('niet null toch')
+            let freshUserInfo = {};
+            user.providerData.forEach((profile) => {
+                console.log("Sign-in provider: " + profile.providerId);
+                console.log("  Provider-specific UID: " + profile.uid);
+                console.log("  Name: " + profile.displayName);
+                console.log("  Email: " + profile.email);
+                console.log("  Photo URL: " + profile.photoURL);
+                freshUserInfo = {
+                    ...freshUserInfo,
+                    email: profile.email,
+                    name: profile.displayName
+                }
+            });
+            setFields({
+                ...fields,
+                ...freshUserInfo
+            })
+
+        }
+
+    },[])
+
+    console.log('que')
+    console.log(fields)
+
+
+
 
     const [error, setError] = useState({});
 
@@ -61,21 +96,7 @@ export const Register = () => {
 
     const submit = (e) => {
         e.preventDefault();
-        if (formValidator()){
-            const auth = getAuth();
-            createUserWithEmailAndPassword(auth, fields.email, fields.password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    console.log(user)
-                    // ...
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.log(errorCode)
-                    // ..
-                });
+        if (formValidator()) {
         }
 
 
@@ -86,34 +107,20 @@ export const Register = () => {
             {error.passwordsDontMatch && <div>Password's don't match</div>}
             {error.invalidEmail && <div>Please enter a valid emailadsress</div>}
 
-            <h2>Register</h2>
+            <h2>Your Profile</h2>
 
             <label htmlFor="email">Email</label>
             <input type="text"
                    name="email"
                    value={fields.email}
                    onChange={(e)=>updateField(e)}
-            />
+            /><label htmlFor="email">Email</label>
 
-            <label htmlFor="password">Password</label>
-            <input
-                type="password"
-                name="password"
-                value={fields.password}
-                onChange={(e)=>updateField(e)}
-            />
 
-            <label htmlFor="password2">Type password again</label>
-            <input
-                type="password"
-                name="password2"
-                value={fields.password2}
-                onChange={(e)=>updateField(e)}
-            />
 
             <button type="submit">Register</button>
         </form>
     )
 }
 
-export default Register;
+export default Profile;

@@ -22,7 +22,8 @@ export const NavBarMain = () => {
 
             {!auth.isAuth &&
                 <div className={css['link-container']}>
-                    <FontAwesomeIcon icon={faUser} />
+
+                    <NavLink to="/profile"><FontAwesomeIcon icon={faUser} /></NavLink>
                     <NavLink to="/login">login</NavLink>
                     <NavLink to="/register" className={css['link-register']}>create account</NavLink>
                 </div>

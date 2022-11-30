@@ -4,7 +4,8 @@ import { FlightData } from './FlightData/FlightData';
 import {FlightContext} from "../../context/FlightContext";
 import {Route, Router, Routes, Switch} from "react-router";
 import Login from "./Login/Login";
-import Register from "./Register/Register"
+import Register from "./Register/Register";
+import Profile from "./Profile/Profile";
 
 export const Content = () => {
 
@@ -16,6 +17,9 @@ export const Content = () => {
 
                 <Route path="/login"
                        element={<Login/>}
+                />
+                <Route path="/profile"
+                       element={<Profile/>}
                 />
                 <Route path="/register"
                        element={<Register/>}
