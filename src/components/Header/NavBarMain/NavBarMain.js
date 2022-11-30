@@ -12,7 +12,8 @@ export const NavBarMain = () => {
 
     const {auth,funcLogin,funcLogout} = useContext(AuthContext);
 
-    console.log(auth.isAuth);
+    console.log('navbar')
+    console.log(auth)
 
     return (
         <nav className={css['nav-bar-main']}>
@@ -22,18 +23,16 @@ export const NavBarMain = () => {
 
             {!auth.isAuth &&
                 <div className={css['link-container']}>
-
-                    <NavLink to="/profile"><FontAwesomeIcon icon={faUser} /></NavLink>
-                    <NavLink to="/login">login</NavLink>
+                    <NavLink to="/login">login </NavLink>
                     <NavLink to="/register" className={css['link-register']}>create account</NavLink>
                 </div>
 
 
             }
             {auth.isAuth &&
-                <div className={css['link-container']} onClick={funcLogout}>
-                    <FontAwesomeIcon icon={faUser} />
-                    <NavLink to="/login">Logout</NavLink>
+                <div className={css['link-container']}>
+                    <NavLink to="/profile">{auth.user.email}<FontAwesomeIcon icon={faUser} /></NavLink>
+                    <NavLink to="/login" onClick={funcLogout}>Logout</NavLink>
                 </div>}
 
         </nav>
