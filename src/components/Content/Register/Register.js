@@ -16,13 +16,18 @@ export const Register = () => {
 
     }
 
-
-
     return (
         <form className={css['login-form']} onSubmit={(e)=>submit(e)}>
             <div>Register</div>
-            <input type="text" name="username"/>
-            <input type="password" name="password" />
+            <label htmlFor="email">Email</label>
+            <input type="text" name="email" />
+
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password"/>
+
+            <label htmlFor="password2">Type password again</label>
+            <input type="password" name="password2"/>
+
             <button type="submit">Register</button>
         </form>
     )

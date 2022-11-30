@@ -8,7 +8,6 @@
   --color-white:#DBD5b5;
   --color-blue:#5BC3EB;
   --color-red:#BF1616;
-
 }
 
 
@@ -44,8 +43,22 @@
 }
 
 
+input {
+  padding:15px;
+  border-radius:5px;
+  border:1px solid #bbbbbb;
+}
 
+button {
+  padding: 15px;
+  border-radius: 5px;
+  border:1px solid #bbb;
+  margin:5px;
+}
 
+label {
+  padding:5px;
+}
 
 
 

@@ -4,6 +4,7 @@ import { FlightData } from './FlightData/FlightData';
 import {FlightContext} from "../../context/FlightContext";
 import {Route, Router, Routes, Switch} from "react-router";
 import Login from "./Login/Login";
+import Register from "./Register/Register"
 
 export const Content = () => {
 
@@ -14,7 +15,10 @@ export const Content = () => {
             <Routes>
 
                 <Route path="/login"
-                        element={<Login/>}
+                       element={<Login/>}
+                />
+                <Route path="/register"
+                       element={<Register/>}
                 />
                 <Route path="/"
                        element={Object.keys(flightInfo).length > 0 &&
