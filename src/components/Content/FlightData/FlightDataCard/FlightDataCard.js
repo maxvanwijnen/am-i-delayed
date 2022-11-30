@@ -50,7 +50,7 @@ const FlightDataCard = ({type, flight, wx}) => {
             <div className={css['flightdatacard-wx']}>
                 <h3>Weather</h3>
                 <div>{temperature.celsius} °C</div>
-                <div>{wind.degrees}/{wind.speed_kph}</div>
+
 
 
 

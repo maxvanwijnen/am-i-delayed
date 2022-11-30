@@ -12,7 +12,7 @@ export const Content = () => {
     const {flightId, flightInfo, wx} = useContext(FlightContext);
 
     return (
-        <section className={css['content']}>
+        <main className={css['content']}>
             <Routes>
 
                 <Route path="/login"
@@ -35,7 +35,7 @@ export const Content = () => {
             </Routes>
 
 
-        </section>
+        </main>
 
     )
 }

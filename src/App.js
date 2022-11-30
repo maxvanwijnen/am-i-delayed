@@ -15,7 +15,6 @@ const App = () => {
     return (
         <>
             <Header
-                flightId={flightId}
                 flightInfo={flightInfo}
             />
            <Content/>

@@ -1,4 +1,4 @@
-import react, {useContext} from 'react';
+import react, {useContext, useEffect, useState} from 'react';
 import css from './header.module.css';
 import { NavBarMain } from './NavBarMain/NavBarMain';
 import { HeaderFlightInfo } from './HeaderFlightInfo/HeaderFlightInfo';
@@ -7,8 +7,11 @@ import { SubMenu } from './SubMenu/SubMenu';
 import {AuthContext} from "../../context/AuthContext";
 
 
-export const Header = ({flightId, flightInfo, setFlightId}) => {
+export const Header = ({ flightInfo }) => {
+
     const {auth, login} = useContext(AuthContext);
+
+
 
 
     return (
@@ -16,14 +19,19 @@ export const Header = ({flightId, flightInfo, setFlightId}) => {
 
             <NavBarMain />
 
-            {Object.keys(flightInfo).length === 0 &&
-                <h1>FLIGHT FINDER</h1>
-            }
             {Object.keys(flightInfo).length > 0 &&
-                <HeaderFlightInfo flightId={flightId} flightInfo={flightInfo} />
+                <HeaderFlightInfo />
+            }
+            {Object.keys(flightInfo).length === 0 &&
+                <>
+                <h1>FLIGHT FINDER</h1>
+                <SearchBar />
+                </>
             }
 
-            <SearchBar flightId={ flightId } setFlightId={ setFlightId }/>
+
+
+
 
             <div className={css['gradient-white']}>
             </div>

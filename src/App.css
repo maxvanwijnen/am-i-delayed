@@ -6,7 +6,9 @@
   --color-green:#44AF69;
   --color-yellow:#FCAB10;
   --color-white:#DBD5b5;
+  --color-dark-grey:#717171;
   --color-blue:#5BC3EB;
+  --color-dark-blue:#2c8fde;
   --color-red:#BF1616;
 }
 
@@ -54,6 +56,7 @@ button {
   border-radius: 5px;
   border:1px solid #bbb;
   margin:5px;
+  cursor: pointerf;
 }
 
 label {
