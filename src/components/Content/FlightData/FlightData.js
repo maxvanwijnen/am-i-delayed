@@ -14,7 +14,6 @@ export const FlightData = ({flightInfo, wxInfo}) => {
     const {reg: acReg, model: acModel} = useContext(FlightContext).flightInfo.apiData[0].aircraft;
     const {name: airline} = useContext(FlightContext).flightInfo.apiData[0].airline;
 
-
     return (
 
         <section className={css['flight-data']}>

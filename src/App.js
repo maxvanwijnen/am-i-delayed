@@ -6,7 +6,7 @@ import {FlightContext} from "./context/FlightContext";
 import { FlightData } from "./components/Content/FlightData/FlightData";
 import { Header } from './components/Header/Header';
 import { Content } from './components/Content/Content';
-import { fetchFlightData } from './z_oldapi/getFllights.js';
+import { fetchFlightData } from './api/getFllights.js';
 
 const App = () => {
 

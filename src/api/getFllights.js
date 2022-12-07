@@ -3,16 +3,22 @@ import react from 'react';
 import axios from "axios";
 
 
+
 export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
 
-
         let apiData = {};
-        const testMode = true;
+        const testMode = false;
+
+        let today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const yyyy = today.getFullYear();
+        today = `${yyyy}-${mm}-${dd}`;
 
         if(!testMode) {
             const options = {
                 method: 'GET',
-                url: `https://aerodatabox.p.rapidapi.com/flights/number/${flightId}/2022-09-16`,
+                url: `https://aerodatabox.p.rapidapi.com/flights/number/${flightId}/${today}`,
                 headers: {
                     'X-RapidAPI-Key': '78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2',
                     'X-RapidAPI-Host': 'aerodatabox.p.rapidapi.com'
@@ -23,7 +29,14 @@ export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
 
                 apiData = response.data;
 
-                setFlightInfo(apiData);
+                console.log('krijg ik mooi data teru')
+                console.log(apiData)
+
+                setFlightInfo({
+                    ...flightInfo,
+                    refreshTime: Date.now(),
+                    apiData
+                });
 
             }).catch(function (error) {
                 console.error(error);

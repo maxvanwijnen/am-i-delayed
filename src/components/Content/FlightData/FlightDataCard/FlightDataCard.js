@@ -2,7 +2,13 @@ import react, {useEffect} from 'react';
 import css from './flightdatacard.module.css';
 
 const getTime = (dateTime) => {
-    return dateTime.substring(10,16);
+    if (dateTime){
+        return dateTime.substring(10,16);
+    }
+    else {
+        return 'Unknown';
+    }
+
 }
 
 const FlightDataCard = ({type, flight, wx}) => {
@@ -11,12 +17,17 @@ const FlightDataCard = ({type, flight, wx}) => {
     const {barometer, clouds, dewpoint, elevation, humidity, icao, observed, temperature, visibility, wind} = wx || {};
 
     let { actualTimeLocal, actualTimeUtc, scheduledTimeLocal, scheduledTimeUtc} = flight;
+
+    console.log('flightg;g')
+    console.log(flight)
+
+
+
     actualTimeUtc = getTime(actualTimeUtc);
     scheduledTimeUtc = getTime(actualTimeUtc);
     actualTimeLocal = getTime(actualTimeLocal);
     scheduledTimeLocal = getTime(scheduledTimeLocal);
 
-    console.log(flight)
 
     return (
 

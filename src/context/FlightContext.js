@@ -1,7 +1,7 @@
 import React, {createContext, useState} from 'react';
 import {useEffect} from "react";
 import {useNavigate} from "react-router";
-import {fetchFlightData} from "../z_oldapi/getFllights";
+import {fetchFlightData} from "../api/getFllights";
 import axios from "axios";
 
 export const FlightContext = createContext({});
