@@ -10,7 +10,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 export const SearchBar = () => {
 
     const [searchQuery, setSearchQuery] = useState('')
-    const {updateFlightId} = useContext(FlightContext);
+    const {updateFlightId, flightInfo} = useContext(FlightContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,6 +34,10 @@ export const SearchBar = () => {
                     <span className={css['search-text']}>Search</span>
                 </button>
             </div>
+            {
+                flightInfo.searchError &&
+                <div className={css['search-error']}>{flightInfo.searchError}</div>
+            }
 
         </form>
     )

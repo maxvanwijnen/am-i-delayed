@@ -85,7 +85,19 @@
 
 .search-bar button:hover
 .search-text {
-    font-size: 17
+    font-size: 17px;
+
+}
+
+.search-error {
+    background:var(--color-red);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding:10px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top:20px;
 
 }
 

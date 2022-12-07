@@ -17,7 +17,7 @@ export const FlightData = ({flightInfo, wxInfo}) => {
     return (
 
         <section className={css['flight-data']}>
-            {Object.keys(flightInfo).length > 0 &&
+            {flightInfo.apiData &&
                 <>
                     <SubMenu />
                     <div>
@@ -39,7 +39,7 @@ export const FlightData = ({flightInfo, wxInfo}) => {
                     }
                 </>
             }
-            {Object.keys(flightInfo).length === 0 &&
+            {!flightInfo.apiData &&
                 <div>Zoek eerst een vlucht</div>
             }
         </section>

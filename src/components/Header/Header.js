@@ -11,13 +11,6 @@ export const Header = ({ flightInfo }) => {
 
     const {auth, login} = useContext(AuthContext);
 
-    console.log('bwerwrwerwe');
-    console.log(flightInfo);
-
-    let flightInfoState = '';
-
-    console.log(flightInfo.searchError);
-
 
     return (
         <header className={css['header']}>
@@ -34,11 +27,6 @@ export const Header = ({ flightInfo }) => {
                 <SearchBar />
                 </>
             }
-
-
-
-
-
 
 
             <div className={css['gradient-white']}>
