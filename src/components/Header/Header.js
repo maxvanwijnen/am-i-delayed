@@ -14,6 +14,10 @@ export const Header = ({ flightInfo }) => {
     console.log('bwerwrwerwe');
     console.log(flightInfo);
 
+    let flightInfoState = '';
+
+    console.log(flightInfo.searchError);
+
 
     return (
         <header className={css['header']}>
@@ -21,15 +25,17 @@ export const Header = ({ flightInfo }) => {
             <NavBarMain />
 
 
-            {Object.keys(flightInfo).length > 0 &&
+            {flightInfo.apiData &&
                 <HeaderFlightInfo />
             }
-            {Object.keys(flightInfo).length === 0 &&
+            {!flightInfo.apiData &&
                 <>
                 <h1>FLIGHT FINDER</h1>
                 <SearchBar />
                 </>
             }
+
+
 
 
 

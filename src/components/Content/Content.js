@@ -25,7 +25,7 @@ export const Content = () => {
                        element={<Register/>}
                 />
                 <Route path="/"
-                       element={Object.keys(flightInfo).length > 0 &&
+                       element={flightInfo.apiData &&
                            <FlightData flightId={ flightId } flightInfo={flightInfo} wxInfo={wx}/>}
                 />
 

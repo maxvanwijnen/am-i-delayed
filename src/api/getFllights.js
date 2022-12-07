@@ -39,9 +39,11 @@ export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
                     });
                 }
                 else {
-                    setFlightInfo({})
+                    setFlightInfo({
+                        searchError:'Flight unknown'
+                    })
                     console.log('dit gaat helemaal fout')
-                    
+
                 }
 
 

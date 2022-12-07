@@ -26,7 +26,7 @@ export const FlightData = ({flightInfo, wxInfo}) => {
 
                     <p>{acModel}</p>
                     <p>{airline}</p>
-                    <p>{flightStatus}</p>
+                    <p>p{flightStatus}</p>
                     {Object.keys(wxInfo).length > 0 &&
                         <>
                         <div className={css['flight']}>

@@ -11,7 +11,8 @@ export const FlightContextProvider = ({ children }) => {
     const navigate = useNavigate();
     const [flight, setFlight] = useState({
         flightId:'',
-        lastRefresh:''
+        lastRefresh:'',
+        searchError: '',
     });
     const [flightInfo, setFlightInfo] = useState({});
 
@@ -31,7 +32,7 @@ export const FlightContextProvider = ({ children }) => {
     },[flight]);
 
     useEffect(()=> {
-        if(Object.keys(flightInfo).length > 0){
+        if(flightInfo.apiData){
 
 
             const depIcao = flightInfo.apiData[0].departure.airport.icao;
