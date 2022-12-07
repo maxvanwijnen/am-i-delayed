@@ -248,6 +248,11 @@ export const FlightContextProvider = ({ children }) => {
             flightId:''
         })
     }
+    const refreshFlight = () => {
+        setFlight({
+            ...flight
+        })
+    }
 
 
     const data = {
@@ -256,6 +261,7 @@ export const FlightContextProvider = ({ children }) => {
         flightInfo:{...flightInfo},
         wx:{...wx},
 
+        refreshFlight:refreshFlight,
         updateFlightId:updateFlightId,
         removeFlightId:removeFlightId
         

@@ -9,6 +9,7 @@ import SubMenu from "../../Header/SubMenu/SubMenu";
 
 export const FlightData = ({flightInfo, wxInfo}) => {
 
+    const { refreshFlight } = useContext(FlightContext);
     const { refreshTime } = useContext(FlightContext).flightInfo;
     const { status: flightStatus, departure, arrival, number:flNumber} = useContext(FlightContext).flightInfo.apiData[0];
     const {reg: acReg, model: acModel} = useContext(FlightContext).flightInfo.apiData[0].aircraft;
@@ -21,7 +22,7 @@ export const FlightData = ({flightInfo, wxInfo}) => {
                 <>
                     <SubMenu />
                     <div>
-                        <h2>{flNumber}</h2> <button>Refresh ({refreshTime})</button>
+                        <h2>{flNumber}</h2> <button onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
                     </div>
 
                     <p>{acModel}</p>
