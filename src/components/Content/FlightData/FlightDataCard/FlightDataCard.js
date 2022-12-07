@@ -28,6 +28,16 @@ const FlightDataCard = ({type, flight, wx}) => {
     actualTimeLocal = getTime(actualTimeLocal);
     scheduledTimeLocal = getTime(scheduledTimeLocal);
 
+    //Sommige airports geven geen municipalityname en iataCode terug
+    //Als dat het geval  is, dan het name veld gebruiken
+    if (!airport.municipalityName){
+        airport.municipalityName = airport.name;
+    }
+    if (!airport.iata){
+        airport.iata = airport.name;
+    }
+
+
 
     return (
 
@@ -36,7 +46,8 @@ const FlightDataCard = ({type, flight, wx}) => {
             <div className={css['flightdatacard-flight']}>
                 <div className={css['data-top']}>
                     <div className={css['iata']}>{airport.iata}</div>
-                    <div className={css['location']}>{airport.municipalityName} <span className={css['country-code']}>({airport.countryCode})</span></div>
+                    <div className={css['location']}>{airport.municipalityName} {airport.countryCode && <span className={css['country-code']}>({airport.countryCode})</span>}
+                    </div>
                 </div>
                 <div className={css['data-center']}>
                     <div className={css['actual']}>
@@ -48,7 +59,7 @@ const FlightDataCard = ({type, flight, wx}) => {
                         <div className={css['label']}>scheduled</div>
                     </div>
                 </div>
-                <div>sdasda</div>
+
 
                 <div>
                     <div>{actualTimeLocal}</div>
