@@ -1,5 +1,6 @@
 import react, {createContext, useState, useContext, useEffect} from 'react';
 import {useNavigate} from "react-router";
+
 import {FireBaseContext} from "./FireBaseContext";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -10,6 +11,7 @@ export const AuthContext = createContext({});
 function AuthContextProvider({children}){
 
     const {fireBase, fireBaseGetAuth} = useContext(FireBaseContext);
+
 
 
     const [auth,setAuth] = useState({
