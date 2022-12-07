@@ -52,8 +52,6 @@ function AuthContextProvider({children}){
         const user = getAuth().currentUser;
 
 
-        console.log('hay')
-
         if (user !== null) {
 
             let freshUserInfo = {};

@@ -56,7 +56,7 @@ button {
   border-radius: 5px;
   border:1px solid #bbb;
   margin:5px;
-  cursor: pointerf;
+  cursor: pointer;
 }
 
 label {

@@ -1,11 +1,14 @@
 import React, {createContext, useState} from 'react';
 import {useEffect} from "react";
+import {useNavigate} from "react-router";
 import {fetchFlightData} from "../z_oldapi/getFllights";
 import axios from "axios";
 
 export const FlightContext = createContext({});
 
 export const FlightContextProvider = ({ children }) => {
+
+    const navigate = useNavigate();
     const [flight, setFlight] = useState({
         flightId:'',
         lastRefresh:''
@@ -19,7 +22,6 @@ export const FlightContextProvider = ({ children }) => {
     useEffect(()=> {
         if (flight.flightId.length > 0) {
             fetchFlightData(flight.flightId,setFlightInfo, flightInfo);
-
         }
         else{
             setFlightInfo({})
@@ -225,7 +227,8 @@ export const FlightContextProvider = ({ children }) => {
                 }
 
             }
-            fetchWXData(depIcao,arrIcao)
+            fetchWXData(depIcao,arrIcao);
+            navigate('/');
         }
 
     },[flightInfo])
@@ -244,13 +247,6 @@ export const FlightContextProvider = ({ children }) => {
             flightId:''
         })
     }
-
-
-
-
-
-
-
 
 
     const data = {
