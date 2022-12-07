@@ -31,14 +31,23 @@ export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
 
                 console.log('krijg ik mooi data teru')
                 console.log(apiData)
+                if (apiData) {
+                    setFlightInfo({
+                        ...flightInfo,
+                        refreshTime: Date.now(),
+                        apiData
+                    });
+                }
+                else {
+                    setFlightInfo({})
+                    console.log('dit gaat helemaal fout')
+                    
+                }
 
-                setFlightInfo({
-                    ...flightInfo,
-                    refreshTime: Date.now(),
-                    apiData
-                });
 
             }).catch(function (error) {
+                setFlightInfo({})
+                console.log('dit gaat helemaal fout')
                 console.error(error);
             });
         }

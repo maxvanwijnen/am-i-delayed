@@ -11,13 +11,15 @@ export const Header = ({ flightInfo }) => {
 
     const {auth, login} = useContext(AuthContext);
 
-
+    console.log('bwerwrwerwe');
+    console.log(flightInfo);
 
 
     return (
         <header className={css['header']}>
 
             <NavBarMain />
+
 
             {Object.keys(flightInfo).length > 0 &&
                 <HeaderFlightInfo />
