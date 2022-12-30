@@ -7,6 +7,7 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import Profile from "./Profile/Profile";
 import FlightTracker from "./FlightTracker/FlightTracker";
+import Home from './Home/Home';
 
 export const Content = () => {
 
@@ -27,10 +28,13 @@ export const Content = () => {
                 <Route path="/register"
                        element={<Register/>}
                 />
-                <Route path="/"
-                       element={flightInfo.apiData &&
-                           <FlightData flightId={ flightId } flightInfo={flightInfo} wxInfo={wx}/>}
-                />
+                {flightInfo.apiData && <Route path="/"
+                                              element={<FlightData flightId={ flightId } flightInfo={flightInfo} wxInfo={wx}/>}
+                />}
+                {!flightInfo.apiData && <Route path="/"
+                                              element={<Home />}
+                />}
+
                 <Route path="/flight-tracker"
                        element={flightInfo.apiData &&
                            <FlightTracker planeRegistration={flightInfo.apiData[0].aircraft.reg}/>}
