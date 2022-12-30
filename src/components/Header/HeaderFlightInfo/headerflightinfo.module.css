@@ -49,10 +49,12 @@
 }
 
 .change-flight-btn {
-    padding: 5px;
-    background: #2c8fde;
+    padding: 12px;
+    background: rgba(44,143,222,0.5);
     text-transform: capitalize;
+    font-weight: bold;
     color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
     border: 1px solid #2177bb;
-
 }

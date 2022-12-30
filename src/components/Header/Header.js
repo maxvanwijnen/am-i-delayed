@@ -20,7 +20,7 @@ export const Header = ({ flightInfo }) => {
             }
             {!flightInfo.apiData &&
                 <>
-                    <h1>FLIGHT FINDER</h1>
+                    <span className={css['title']}>Flightfinder</span>
                     <SearchBar />
                 </>
             }
