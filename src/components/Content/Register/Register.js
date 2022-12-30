@@ -82,39 +82,44 @@ export const Register = () => {
     }
 
     return (
-        <form className={css['login-form']} onSubmit={(e)=>submit(e)}>
-            {error.passwordsDontMatch && <div>Password's don't match</div>}
-            {error.invalidEmail && <div>Please enter a valid emailadsress</div>}
+        <section className={css['login-form']}>
+
+
 
             <h1>Register</h1>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aut blanditiis cupiditate dolores ducimus, omnis perferendis quibusdam quos ratione recusandae similique suscipit temporibus? Blanditiis consectetur corporis dicta dolorum, enim nemo possimus quaerat rem tempore voluptatum. Commodi cum, deleniti omnis repellendus similique voluptas? Ab asperiores autem beatae cum cumque, dignissimos harum, ipsum itaque laboriosam nobis officia perspiciatis, possimus provident quas reprehenderit tenetur veniam? A alias aperiam aut commodi deserunt, dicta distinctio, eaque eveniet explicabo fuga id incidunt nemo nesciunt pariatur quibusdam quod sunt temporibus totam veniam voluptatum? Animi eius facilis in laudantium optio, quam quidem rem reprehenderit sunt, voluptas voluptate!</p>
 
-            <label htmlFor="email">Email</label>
-            <input type="text"
-                   name="email"
-                   value={fields.email}
-                   onChange={(e)=>updateField(e)}
-            />
+            <form onSubmit={(e)=>submit(e)}>
+                <label htmlFor="email">Email</label>
+               {error.invalidEmail && <div>Please enter a valid emailadsress</div>}
+                <input type="text"
+                       name="email"
+                       value={fields.email}
+                       onChange={(e)=>updateField(e)}
+                />
 
-            <label htmlFor="password">Password</label>
-            <input
-                type="password"
-                name="password"
-                value={fields.password}
-                onChange={(e)=>updateField(e)}
-            />
+                <label htmlFor="password">Password</label>
+                {error.passwordsDontMatch && <div>Password's don't match</div>}
+                <input
+                    type="password"
+                    name="password"
+                    value={fields.password}
+                    onChange={(e)=>updateField(e)}
+                />
 
-            <label htmlFor="password2">Type password again</label>
-            <input
-                type="password"
-                name="password2"
-                value={fields.password2}
-                onChange={(e)=>updateField(e)}
-            />
+                <label htmlFor="password2">Type password again</label>
+                <input
+                    type="password"
+                    name="password2"
+                    value={fields.password2}
+                    onChange={(e)=>updateField(e)}
+                />
 
-            <button type="submit">Register</button>
-        </form>
+                <button type="submit">Register</button>
+            </form>
+
+        </section>
     )
 }
 
