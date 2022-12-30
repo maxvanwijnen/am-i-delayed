@@ -17,8 +17,7 @@ const App = () => {
             <Header
                 flightInfo={flightInfo}
             />
-           <Content/>
-            
+           <Content />
         </>
     )
 }

@@ -18,7 +18,6 @@ export const Content = () => {
     return (
         <main className={css['content']}>
             <Routes>
-
                 <Route path="/login"
                        element={<Login/>}
                 />

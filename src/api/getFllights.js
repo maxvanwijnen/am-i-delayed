@@ -1,4 +1,3 @@
-import react from 'react';
 
 import axios from "axios";
 
@@ -7,7 +6,7 @@ import axios from "axios";
 export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
 
         let apiData = {};
-        const testMode = false;
+        const testMode = true;
 
         let today = new Date();
         const dd = String(today.getDate()).padStart(2, '0');

@@ -1,12 +1,15 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {useEffect} from "react";
 import {useNavigate} from "react-router";
 import {fetchFlightData} from "../api/getFllights";
 import axios from "axios";
+import {AuthContext} from "./AuthContext";
 
 export const FlightContext = createContext({});
 
 export const FlightContextProvider = ({ children }) => {
+
+    const { auth } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const [flight, setFlight] = useState({
@@ -21,16 +24,24 @@ export const FlightContextProvider = ({ children }) => {
 
 
     useEffect(()=> {
-        if (flight.flightId.length > 0) {
-            fetchFlightData(flight.flightId,setFlightInfo, flightInfo);
+        if(auth.isAuth){
+            if (flight.flightId.length > 0) {
+                fetchFlightData(flight.flightId,setFlightInfo, flightInfo);
+            }
+            else{
+                setFlightInfo({})
+            }
         }
-        else{
-            setFlightInfo({})
+        else {
+            setFlightInfo({
+                ...flightInfo,
+                searchError: 'Please login  first',
+            })
         }
-
 
     },[flight]);
 
+    //Als flightinfo  wordt geupdate, dan het weer opnieuw ophalen
     useEffect(()=> {
         if(flightInfo.apiData){
 
@@ -233,6 +244,7 @@ export const FlightContextProvider = ({ children }) => {
         }
 
     },[flightInfo])
+
 
 
     const updateFlightId = (flightId) => {

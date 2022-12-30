@@ -14,21 +14,16 @@ export const Header = ({ flightInfo }) => {
 
     return (
         <header className={css['header']}>
-
             <NavBarMain />
-
-
-            {flightInfo.apiData &&
+            {auth.isAuth && flightInfo.apiData &&
                 <HeaderFlightInfo />
             }
             {!flightInfo.apiData &&
                 <>
-                <h1>FLIGHT FINDER</h1>
-                <SearchBar />
+                    <h1>FLIGHT FINDER</h1>
+                    <SearchBar />
                 </>
             }
-
-
             <div className={css['gradient-white']}>
             </div>
         </header>
