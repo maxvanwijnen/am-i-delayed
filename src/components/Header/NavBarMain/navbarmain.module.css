@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
 }
-.nav-bar-main .link-container a:last-child {
+.nav-bar-main .link-container:last-child a:last-child {
     border-left:1px solid grey;
 }
 .link-container > img,

@@ -18,6 +18,7 @@ export const HamburgerMenu = () => {
                 <div className={css['menu-extended']}>
                     <NavLink onClick={()=>toggleMenuExtended(!menuExtended)} to="/">home</NavLink>
                     <NavLink onClick={()=>toggleMenuExtended(!menuExtended)} to="/login">login</NavLink>
+                    <NavLink onClick={()=>toggleMenuExtended(!menuExtended)} to="/register">create account</NavLink>
                 </div>
             }
         </>
