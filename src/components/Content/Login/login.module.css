@@ -1,4 +1,26 @@
 .login-form {
     display: flex;
     flex-direction: column;
+
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+
+form input, button {
+    width: 100%;
+    margin:10px 0px;
+}
+
+form button {
+    background-color: var(--color-orange);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+    width: 200px;
 }

@@ -86,7 +86,7 @@ export const Register = () => {
             {error.passwordsDontMatch && <div>Password's don't match</div>}
             {error.invalidEmail && <div>Please enter a valid emailadsress</div>}
 
-            <h2>Register</h2>
+            <h1>Register</h1>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aut blanditiis cupiditate dolores ducimus, omnis perferendis quibusdam quos ratione recusandae similique suscipit temporibus? Blanditiis consectetur corporis dicta dolorum, enim nemo possimus quaerat rem tempore voluptatum. Commodi cum, deleniti omnis repellendus similique voluptas? Ab asperiores autem beatae cum cumque, dignissimos harum, ipsum itaque laboriosam nobis officia perspiciatis, possimus provident quas reprehenderit tenetur veniam? A alias aperiam aut commodi deserunt, dicta distinctio, eaque eveniet explicabo fuga id incidunt nemo nesciunt pariatur quibusdam quod sunt temporibus totam veniam voluptatum? Animi eius facilis in laudantium optio, quam quidem rem reprehenderit sunt, voluptas voluptate!</p>
 
