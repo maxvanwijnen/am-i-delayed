@@ -21,13 +21,12 @@ export const FlightData = ({flightInfo, wxInfo}) => {
             {flightInfo.apiData &&
                 <>
                     <SubMenu />
-                    <div>
-                        <h2>{flNumber}</h2> <button onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
+                    <div className={css['flight-number-refresh']}>
+                        <h2>{flNumber}</h2> <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
                     </div>
-
-                    <p>{acModel}</p>
-                    <p>{airline}</p>
-                    <p>{flightStatus}</p>
+                    <div className={css['airline']} >{airline}</div>
+                    <div className={css['ac-model']}>{acModel}</div>
+                    <div className={css['flight-status']} >{flightStatus}</div>
                     {Object.keys(wxInfo).length > 0 &&
                         <>
                         <div className={css['flight']}>

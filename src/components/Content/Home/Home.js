@@ -14,15 +14,15 @@ const Home = () => {
                 <div className={css['text-column-wrapper']}>
 
                     <div>
-                        <h3>USP 1</h3>
+                        <h3>Search any flight</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur assumenda consequatur esse facere incidunt laboriosam libero modi mollitia, nisi nulla quaerat quisquam quod quos, repudiandae rerum soluta suscipit tempora tenetur voluptate! Architecto cum enim exercitationem harum libero quam vero.</p>
                     </div>
                     <div>
-                        <h3>USP 2</h3>
+                        <h3>Always up to date</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur assumenda consequatur esse facere incidunt laboriosam libero modi mollitia, nisi nulla quaerat quisquam quod quos, repudiandae rerum soluta suscipit tempora tenetur voluptate! Architecto cum enim exercitationem harum libero quam vero.</p>
                     </div>
                     <div>
-                        <h3>USP 3</h3>
+                        <h3>Fun to use</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur assumenda consequatur esse facere incidunt laboriosam libero modi mollitia, nisi nulla quaerat quisquam quod quos, repudiandae rerum soluta suscipit tempora tenetur voluptate! Architecto cum enim exercitationem harum libero quam vero.</p>
                     </div>
 

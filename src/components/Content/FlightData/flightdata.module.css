@@ -8,6 +8,7 @@
     width: 100%;
 
 
+
 }
 
 .flight {
@@ -16,4 +17,27 @@
     display:flex ;
     justify-content: space-between;
 
+}
+
+.flight-number-refresh {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.refresh-button {
+    background-color: var(--color-blue);
+    color:white;
+    font-weight: bold;
+    border:0px
+}
+h2 {
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+.ac-model {
+    font-size: 22px;
+}
+.airline {
+    font-size: 30px;
 }

@@ -85,7 +85,7 @@ export const Profile = () => {
 
 
 
-            <button type="submit">Register</button>
+            <button type="submit">Save</button>
         </form>
     )
 }

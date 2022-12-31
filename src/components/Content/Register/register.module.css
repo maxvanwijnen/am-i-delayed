@@ -2,3 +2,9 @@
     display: flex;
     flex-direction: column;
 }
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}

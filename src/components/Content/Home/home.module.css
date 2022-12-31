@@ -4,5 +4,5 @@
 
 .text-column-wrapper {
     display: flex;
-
+    gap:100px;
 }
