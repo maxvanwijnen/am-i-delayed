@@ -35,9 +35,11 @@ h2 {
     font-size: 32px;
     margin-bottom: 0px;
 }
-.ac-model {
-    font-size: 22px;
-}
+
 .airline {
-    font-size: 30px;
+    font-size: 50px;
+}
+
+.ac-model {
+    font-size: 24px;
 }
