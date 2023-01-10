@@ -12,9 +12,6 @@ export const NavBarMain = () => {
 
     const {auth,funcLogin,funcLogout} = useContext(AuthContext);
 
-    console.log('navbar')
-    console.log(auth)
-
     return (
         <nav className={css['nav-bar-main']}>
             <div className={css['link-container']}>

@@ -18,10 +18,6 @@ const FlightDataCard = ({type, flight, wx}) => {
 
     let { actualTimeLocal, actualTimeUtc, scheduledTimeLocal, scheduledTimeUtc} = flight;
 
-    console.log('flightg;g')
-    console.log(flight)
-
-
 
     actualTimeUtc = getTime(actualTimeUtc);
     scheduledTimeUtc = getTime(actualTimeUtc);

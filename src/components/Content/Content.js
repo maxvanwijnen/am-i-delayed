@@ -1,20 +1,28 @@
-import react, {useContext} from 'react';
+import {useContext} from 'react';
 import css from './content.module.css';
 import { FlightData } from './FlightData/FlightData';
 import {FlightContext} from "../../context/FlightContext";
-import {Route, Router, Routes, Switch} from "react-router";
+import {Route, Routes} from "react-router";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
 import Profile from "./Profile/Profile";
 import FlightTracker from "./FlightTracker/FlightTracker";
 import Home from './Home/Home';
 
+
 export const Content = () => {
 
     const {flightId, flightInfo, wx} = useContext(FlightContext);
 
-    console.log('o0piipipipoi')
-    console.log(flightInfo)
+    function getAircraftReg(flightInfo) {
+        try {
+            return flightInfo.apiData[0].aircraft.reg
+        } catch (error) {
+            return false
+        }
+    }
+
+
 
     return (
         <main className={css['content']}>
@@ -35,10 +43,15 @@ export const Content = () => {
                                               element={<Home />}
                 />}
 
-                <Route path="/flight-tracker"
-                       element={flightInfo.apiData &&
-                           <FlightTracker planeRegistration={flightInfo.apiData[0].aircraft.reg}/>}
-                />
+
+
+
+              {
+                    getAircraftReg(flightInfo) &&
+                    <Route path="/flight-tracker"
+                           element={<FlightTracker planeRegistration={flightInfo.apiData[0].aircraft.reg}/>}
+                    />
+                }
 
             </Routes>
 

@@ -4,7 +4,7 @@ import {AuthContext} from "../../../context/AuthContext";
 
 export const Login = () => {
 
-    const { funcLogin } = useContext(AuthContext);
+    const { funcLogin, loginError } = useContext(AuthContext);
 
 
 
@@ -25,6 +25,7 @@ export const Login = () => {
 
             <form onSubmit={(e)=>submit(e)}>
 
+                <span className={css['login-error']}>{loginError}</span>
                 <label htmlFor="username">Email address</label>
                 <input type="text" name="username"/>
                 <label htmlFor="password">Password</label>

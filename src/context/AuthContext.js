@@ -12,12 +12,12 @@ function AuthContextProvider({children}){
 
     const {fireBase, fireBaseGetAuth} = useContext(FireBaseContext);
 
-
-
     const [auth,setAuth] = useState({
         isAuth: false,
         user: null,
     })
+
+    const [loginError, setLoginError] = useState('');
 
     const [finishedLoading, toggleFinishedLoading] = useState(false);
 
@@ -31,14 +31,11 @@ function AuthContextProvider({children}){
             if (user) {
                 const user = getAuth().currentUser;
 
-
-                console.log('hola')
-
                 setUserInfo();
 
                 toggleFinishedLoading(true)
             } else {
-                console.log('user is uitgeloegd')
+                //user is uitgelogd
                 toggleFinishedLoading(true)
 
             }
@@ -112,13 +109,46 @@ function AuthContextProvider({children}){
                     // Handle error
                 });
                 console.log('je bent ingelogd');
+
+                //Als er een inlog error was, reset deze dan
+                if (loginError){
+                    setLoginError('');
+                }
+
                 navigate('/profile');
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode)
-                console.log(errorMessage)
+
+
+
+                let displayError;
+                if (errorCode.includes('wrong-password')) {
+                    displayError = 'Wrong password'
+                }
+                if (errorCode.includes('wrong-password')) {
+                    displayError = 'Wrong password'
+                }
+
+                switch (errorCode) {
+
+                    case 'auth/invalid-email':
+                        displayError = 'Please enter a valid emailaddress'
+                        break;
+                    case 'auth/wrong-password':
+                        displayError = 'Wrong password'
+                        break;
+                    case 'auth/internal-error':
+                        displayError = 'Please check your credentials'
+                        break;
+                    default:
+                        displayError= 'Please check your credentials'
+                }
+
+
+                console.log('helaas'+error.message  + ' : '+ error.code)
+                setLoginError(displayError);
             });
 
     }
@@ -143,9 +173,10 @@ function AuthContextProvider({children}){
     }
 
     const contextData = {
-        auth: auth,
+        auth,
         funcLogin: login,
         funcLogout:logout,
+        loginError
     };
 
     return (

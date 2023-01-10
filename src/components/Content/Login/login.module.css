@@ -10,6 +10,14 @@
     max-width: 400px;
 }
 
+.login-error {
+    background-color: #ffc6c6;
+    color: #540e0e;
+    border: 1px solid #c99f9f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
 form input, button {
     width: 100%;
