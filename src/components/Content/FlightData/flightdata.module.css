@@ -1,22 +1,14 @@
 .flight-data {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
     width: 100%;
-
-
-
 }
 
 .flight {
-    
     width: 100%;
     display:flex ;
     justify-content: space-between;
-
 }
 
 .flight-number-refresh {
@@ -43,4 +35,10 @@ h2 {
 
 .ac-model {
     font-size: 24px;
+}
+
+@media only screen and (max-width: 800px) {
+    .flight-data .flight {
+        flex-direction: column;
+    }
 }

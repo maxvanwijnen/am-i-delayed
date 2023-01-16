@@ -6,3 +6,9 @@
     display: flex;
     gap:100px;
 }
+
+@media only screen and (max-width: 800px) {
+    .text-column-wrapper {
+        flex-direction: column;
+    }
+}

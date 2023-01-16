@@ -65,8 +65,8 @@ const FlightDataCard = ({type, flight, wx}) => {
                 <div className={css['terminal-info']}>
                     <ul>
                         <li>Terminal {terminal}</li>
-                        {checkInDesk && <div>Checkin: {checkInDesk}</div>}
-                        {gate && <div>Gate: {gate}</div>}
+                        {checkInDesk && <li>Checkin: {checkInDesk}</li>}
+                        {gate && <li>Gate: {gate}</li>}
                     </ul>
                 </div>
 

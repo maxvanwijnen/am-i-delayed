@@ -101,10 +101,23 @@
 
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 800px) {
+
+
+
     .search-bar {
-        width:400px;
-        max-width: 100%;
+        width:90%;
+    }
+
+    .search-query-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-query-wrapper input,
+    .search-query-wrapper button {
+        width: 90%;
+        margin:0px;
     }
 
 }

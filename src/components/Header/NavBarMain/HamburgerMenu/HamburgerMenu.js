@@ -12,7 +12,7 @@ export const HamburgerMenu = () => {
 
 
     return (
-        <>
+        <nav className={css['hb-wrapper']}>
         <div onClick={()=>toggleMenuExtended(!menuExtended)} className={css['hamburger-menu']}>
             <FontAwesomeIcon icon={faBars} className={css['hamburger-icon']} /> Menu
         </div>
@@ -24,7 +24,7 @@ export const HamburgerMenu = () => {
                     {auth.isAuth && <NavLink to="/login" onClick={funcLogout}>Logout</NavLink>}
                         </div>
             }
-        </>
+        </nav>
     )
 }
 

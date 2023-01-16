@@ -61,6 +61,11 @@
 
 .terminal-info ul {
     list-style: none;
+    margin-top:30px;
+}
+
+.terminal-info ul li {
+    margin-bottom: 10px;
 }
 .flightdatacard-wx {
     background-color: #5bc3eb5e;
