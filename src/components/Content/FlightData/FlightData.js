@@ -5,8 +5,6 @@ import {FlightContext} from "../../../context/FlightContext";
 import SubMenu from "../../Header/SubMenu/SubMenu";
 
 
-
-
 export const FlightData = ({flightInfo, wxInfo}) => {
 
     const { refreshFlight } = useContext(FlightContext);
@@ -15,6 +13,8 @@ export const FlightData = ({flightInfo, wxInfo}) => {
     const {reg: acReg, model: acModel} = useContext(FlightContext).flightInfo.apiData[0].aircraft;
     const {name: airline} = useContext(FlightContext).flightInfo.apiData[0].airline;
 
+    console.log(wxInfo)
+
     return (
 
         <section className={css['flight-data']}>
@@ -22,7 +22,8 @@ export const FlightData = ({flightInfo, wxInfo}) => {
                 <>
                     <SubMenu />
                     <div className={css['flight-number-refresh']}>
-                        <h2>{flNumber}</h2> <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
+                        <h2>{flNumber}</h2>
+                        <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
                     </div>
                     <div className={css['airline']} >{airline}</div>
                     <div className={css['ac-model']}>{acModel}</div>
@@ -33,7 +34,6 @@ export const FlightData = ({flightInfo, wxInfo}) => {
                             <FlightDataCard type="departure" flight={departure} wx={wxInfo.dep}/>
                             <FlightDataCard type="arrival" flight={arrival} wx={wxInfo.arr} />
                         </div>
-
 
                         </>
                     }

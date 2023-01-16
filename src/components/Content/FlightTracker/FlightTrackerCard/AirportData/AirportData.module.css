@@ -22,6 +22,11 @@
 
 }
 
+.airport-data .label,  .airport-data .time {
+    text-align: center;
+}
+
+
 .airport-data h6 {
     text-align: center;
     font-size: 18px;

@@ -1,5 +1,7 @@
 import react, {useEffect} from 'react';
 import css from './flightdatacard.module.css';
+import {getWind} from "../../../../functions/getWind";
+import {getPrecepition} from "../../../../functions/getPrecepition";
 
 const getTime = (dateTime) => {
     if (dateTime){
@@ -13,8 +15,8 @@ const getTime = (dateTime) => {
 
 const FlightDataCard = ({type, flight, wx}) => {
 
-    const { airport, checkInDesk, gate, terminal} = flight;
-    const {barometer, clouds, dewpoint, elevation, humidity, icao, observed, temperature, visibility, wind} = wx || {};
+    const { airport, checkInDesk, gate, terminal } = flight;
+    const  {temperature, wind, conditions} = wx || {};
 
     let { actualTimeLocal, actualTimeUtc, scheduledTimeLocal, scheduledTimeUtc} = flight;
 
@@ -23,6 +25,9 @@ const FlightDataCard = ({type, flight, wx}) => {
     scheduledTimeUtc = getTime(actualTimeUtc);
     actualTimeLocal = getTime(actualTimeLocal);
     scheduledTimeLocal = getTime(scheduledTimeLocal);
+
+
+
 
     //Sommige airports geven geen municipalityname en iataCode terug
     //Als dat het geval  is, dan het name veld gebruiken
@@ -57,17 +62,23 @@ const FlightDataCard = ({type, flight, wx}) => {
                 </div>
 
 
-                <div>
-                    <div>{actualTimeLocal}</div>
-                    <div>Terminal {terminal}</div>
-                    {checkInDesk && <div>Checkin: {checkInDesk}</div>}
-                    {gate && <div>Gate: {gate}</div>}
+                <div className={css['terminal-info']}>
+                    <ul>
+                        <li>Terminal {terminal}</li>
+                        {checkInDesk && <div>Checkin: {checkInDesk}</div>}
+                        {gate && <div>Gate: {gate}</div>}
+                    </ul>
                 </div>
 
             </div>
             <div className={css['flightdatacard-wx']}>
                 <h3>Weather</h3>
-                <div>{temperature.celsius} °C</div>
+                <ul>
+                    <li>Temp: {temperature.celsius} °C</li>
+                    <li>Wind: {getWind(wind.degrees,wind.speed_kph)}</li>
+                    <li>Precipitation: {getPrecepition(conditions)}</li>
+                </ul>
+
 
 
 

@@ -23,12 +23,12 @@ export const AirportData = ({fl, type}) => {
                 <h5>{renderApiValue(fl.airport.municipalityName)}  ({renderApiValue(fl.airport.countryCode)})</h5>
                 <div>
                     <div>
-                        <h6>{event}</h6>
-                        {renderApiValue(fl.actualTimeLocal)}
+                        <h6 className={css['label']}>{event}</h6>
+                        <div className={css['time']}>{renderApiValue(fl.actualTimeLocal)}</div>
                     </div>
                     <div>
-                        <h6>Scheduled</h6>
-                        {renderApiValue(fl.scheduledTimeLocal)}
+                        <h6 className={css['label']}>Scheduled</h6>
+                        <div className={css['time']}>{renderApiValue(fl.scheduledTimeLocal)}</div>
                     </div>
                 </div>
             </div>

@@ -58,6 +58,10 @@
 .flightdatacard .flightdatacard-flight {
     padding: 10px;
 }
+
+.terminal-info ul {
+    list-style: none;
+}
 .flightdatacard-wx {
     background-color: #5bc3eb5e;
     color: white;
@@ -69,6 +73,14 @@
     text-align: center;
     margin-top: 0px;
 }
+.flightdatacard-wx ul {
+    list-style: none;
+}
+.flightdatacard-wx ul li{
+    margin-bottom: 10px;
+    font-weight: bold;
+ }
+
 .old-actual-time {
     text-decoration: line-through;
 }

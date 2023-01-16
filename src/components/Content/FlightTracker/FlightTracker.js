@@ -10,6 +10,8 @@ import css  from './flighttracker.module.css';
 export const FlightTracker = ({planeRegistration}) => {
 
     const [flightsArray, setFlightsArray] = useState();
+    const [reg, setReg] = useState();
+    console.log('ppppppppppp')
 
 
     const getFlights = async (testMode) => {
@@ -21,9 +23,10 @@ export const FlightTracker = ({planeRegistration}) => {
             const filteredArray = getTestFlightTrackerObject().data.filter(fl => fl.codeshareStatus === "IsOperator");
             setFlightsArray(filteredArray);
 
-
             return;
         }
+
+
 
         const options = {
             method: 'GET',
@@ -37,6 +40,7 @@ export const FlightTracker = ({planeRegistration}) => {
 
         try {
             const response = await axios.request(options);
+            console.log('response')
             console.log(response);
             setFlightsArray(response.data);
         } catch (error) {
@@ -46,9 +50,10 @@ export const FlightTracker = ({planeRegistration}) => {
     }
 
 
-    useEffect(()=>{
-        getFlights(true);
-    },[])
+
+    getFlights(false);
+
+
 
 
 
