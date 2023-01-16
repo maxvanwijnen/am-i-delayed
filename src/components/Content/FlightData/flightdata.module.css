@@ -40,5 +40,6 @@ h2 {
 @media only screen and (max-width: 800px) {
     .flight-data .flight {
         flex-direction: column;
+        align-items: center;
     }
 }
