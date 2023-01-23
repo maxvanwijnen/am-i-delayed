@@ -1,10 +1,38 @@
-# Getting Started with Create React App
+# Flight Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![img.png](img.png)
 
-## Available Scripts
+## Inleiding
+Flight finder is een webapp om de status van je vlucht te bekijken.
+Middels het invoerveld kan een vluchtnummer (van de huidige dag)ingevuld worden.
+Aan de hand van dit vluchtnummer wordt de API van aerodata aangesproken om de vluchtgegevens op te halen. 
+Ook wordt de API van de api.checkwx.com aangesproken om het weer op te halen van de lucht havens. Via de flighttracker pagina kan men alle vluchten bekijken die het vliegtuig die dag heeft aangedaan.
 
-In the project directory, you can run:
+
+
+
+## API's
+
+De externe API's die zijn gebruikt:
+
+* ### FlightInfo
+
+Provider: AerodataBox via RapidAPI.com
+
+API KEY: 78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2
+
+* ### Weather
+Provider: AerodataBox via RapidAPI.com
+
+API KEY: cc13c7e73d2242d796c396c518
+
+* ### FireBase
+Provider: FireBase
+
+API KEY: cc13c7e73d2242d796c396c518
+
+
+
 
 ### `npm start`
 
