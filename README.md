@@ -17,82 +17,61 @@ De externe API's die zijn gebruikt:
 
 * ### FlightInfo
 
-Provider: AerodataBox via RapidAPI.com
+Provider: https://rapidapi.com/aedbx-aedbx/api/aerodatabox/
 
 API KEY: 78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2
 
 * ### Weather
-Provider: AerodataBox via RapidAPI.com
+Provider: https://api.checkwx.com
 
 API KEY: cc13c7e73d2242d796c396c518
 
 * ### FireBase
 Provider: FireBase
 
-API KEY: cc13c7e73d2242d796c396c518
+REACT_APP_FB_API_KEY=AIzaSyBeEU00YIqGA11BOgdo7aSd9G7oSFRrcEU
+REACT_APP_FB_AUTH_DOMAIN=where-is-my-plane-6e5e7.firebaseapp.com
+REACT_APP_FB_DB_URL=https://where-is-my-plane-6e5e7-default-rtdb.europe-west1.firebasedatabase.app
+
+REACT_APP_FB_PROJECT_ID=where-is-my-plane-6e5e7
+REACT_APP_FB_STORAGE_BUCKET=where-is-my-plane-6e5e7.appspot.com
+REACT_APP_FB_MESSAGING_SENDER_ID=156334592452
+REACT_APP_FB_APP_ID=1:156334592452:web:cbf1b4c75d0302ad659491
+REACT_APP_FB_MEASUREMENT_ID=G-PBGDK87Y2E
 
 
+## Installatie
 
+1. Pak de zip uit
+2. Run `npm install` om de dependencies te installeren
+3. Maak een .env file in de root van het project
+4. Kopieer het format uit de .env.dist
+5. Vul de variabelen in met gegevens uit het kopje API's hierboven.
+6. Maak een nieuwe build met `npm run build`
+7. Run `npm start` om de applicatie te starten
+8. Ga naar http://localhost:3000 om de applicatie te bekijken
 
-### `npm start`
+--
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Om een nieuwe build te maken gebruik `NPM run build`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Gebruik van de applicatie
 
-### `npm test`
+#### Inloggen
+Om in  te loggen  kun je een nieuw account aanmaken.
+Het is ook mogelijk een bestaand account te gebruiken.
+Gebruik hiervoor:
+* Gebruikersnaam: flip@flightfinder.nl
+* Wachtwoord: FL!ghtFind3r
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Vluchten zoeken
 
-### `npm run build`
+Om een vlucht te zoeken heb je uiteraard een vluchtnummer nodig.
+Een eindgebruiker krijgt zijn vluchtnummer toegestuurd vanuit de vliegmaatschappij. Om zelf te testen met echte vluchtnummers ga hiervoor naar: 
+* https://www.schiphol.nl/nl/aankomst
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![img_1.png](img_1.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Elk van deze vluchtnummer kan worden gebruikt.
+Let op alleen vluchtnummers van de huidige dag kunnen worden gebruikt.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
