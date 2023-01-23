@@ -43,13 +43,14 @@ REACT_APP_FB_MEASUREMENT_ID=G-PBGDK87Y2E
 ## Installatie
 
 1. Pak de zip uit
-2. Run `npm install` om de dependencies te installeren
-3. Maak een .env file in de root van het project
-4. Kopieer het format uit de .env.dist
-5. Vul de variabelen in met gegevens uit het kopje API's hierboven.
-6. Maak een nieuwe build met `npm run build`
-7. Run `npm start` om de applicatie te starten
-8. Ga naar http://localhost:3000 om de applicatie te bekijken
+2. Open een console en ga naar de projectmap
+3. Run `npm install` om de dependencies te installeren
+4. Maak een .env file in de root van het project
+5. Kopieer het format uit de .env.dist
+6. Vul de variabelen in met gegevens uit het kopje API's hierboven.
+7. Maak een nieuwe build met `npm run build`
+8. Run `npm start` om de applicatie te starten
+9. Ga naar http://localhost:3000 om de applicatie te bekijken
 
 --
 
