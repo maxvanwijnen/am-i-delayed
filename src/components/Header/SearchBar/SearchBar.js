@@ -26,12 +26,12 @@ export const SearchBar = () => {
                     id="search-bar"
                     onChange={(e) =>  {setSearchQuery(e.target.value)}}
                     className={css['search-field']}
-                    placeholder="Enter your flightnumber"
+                    placeholder="Enter your flightnumber (today only)"
                 />
 
                 <button type="submit">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={css['search-icon']}/>
-                    <span className={css['search-text']}>Search</span>
+                    <span className={css['search-text']}>Search </span>
                 </button>
             </div>
             {

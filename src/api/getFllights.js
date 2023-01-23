@@ -3,10 +3,11 @@ import { getTestFlightObject } from "../functions/getTestFlightObject";
 import { getCurrentDateString } from "../functions/getCurrentDateString";
 
 
-export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
+export const fetchFlightData = async (flightId, setFlightInfo, flightInfo, testMode) => {
+
 
         let apiData = {};
-        const testMode = true;
+
 
         if (testMode){
             apiData = getTestFlightObject();
@@ -23,7 +24,7 @@ export const fetchFlightData = async (flightId, setFlightInfo, flightInfo) => {
                 method: 'GET',
                 url: `https://aerodatabox.p.rapidapi.com/flights/number/${flightId}/${getCurrentDateString()}`,
                 headers: {
-                    'X-RapidAPI-Key': '78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2',
+                    'X-RapidAPI-Key': process.env.REACT_APP_FLIGHT_API_KEY,
                     'X-RapidAPI-Host': 'aerodatabox.p.rapidapi.com'
                 }
             };

@@ -21,12 +21,14 @@ export const FlightContextProvider = ({ children }) => {
 
     const [wx, setWx] = useState({});
 
+    const testMode = false;
+
 
 
     useEffect(()=> {
         if(auth.isAuth){
             if (flight.flightId.length > 0) {
-                fetchFlightData(flight.flightId,setFlightInfo, flightInfo);
+                fetchFlightData(flight.flightId,setFlightInfo, flightInfo,testMode);
             }
             else{
                 setFlightInfo({})
@@ -54,7 +56,7 @@ export const FlightContextProvider = ({ children }) => {
             async function fetchWXData(IcaoCodeDep, IcaoCodeArr){
 
                 const options = {
-                    headers: {'X-API-Key': 'cc13c7e73d2242d796c396c518'}
+                    headers: {'X-API-Key': process.env.REACT_APP_WEATHER_API_KEY}
                 };
 
                 try {
@@ -275,7 +277,8 @@ export const FlightContextProvider = ({ children }) => {
 
         refreshFlight:refreshFlight,
         updateFlightId:updateFlightId,
-        removeFlightId:removeFlightId
+        removeFlightId:removeFlightId,
+        testMode
         
     }
 

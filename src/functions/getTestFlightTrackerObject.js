@@ -1803,7 +1803,7 @@ export const getTestFlightTrackerObject = () => {
         },
         "headers": {
             "Accept": "application/json, text/plain, */*",
-            "X-RapidAPI-Key": "78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2",
+            "X-RapidAPI-Key": process.env.REACT_APP_FLIGHT_API_KEY,
             "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com"
         },
         "method": "get",
