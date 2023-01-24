@@ -2,7 +2,13 @@ import react, {createContext, useState, useContext, useEffect} from 'react';
 import {useNavigate} from "react-router";
 
 import {FireBaseContext} from "./FireBaseContext";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
+    createUserWithEmailAndPassword
+} from "firebase/auth";
 
 
 
@@ -151,6 +157,21 @@ function AuthContextProvider({children}){
 
     }
 
+    function register (email, password) {
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                navigate("/");
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
+
 
     function logout(){
         const authFB = getAuth()
@@ -161,7 +182,6 @@ function AuthContextProvider({children}){
                 user:null,
             })
             navigate("/");
-            console.log("Signed out successfully")
         }).catch((error) => {
             // An error happened.
         });
@@ -173,7 +193,8 @@ function AuthContextProvider({children}){
         auth,
         funcLogin: login,
         funcLogout:logout,
-        loginError
+        loginError,
+        register
     };
 
     return (

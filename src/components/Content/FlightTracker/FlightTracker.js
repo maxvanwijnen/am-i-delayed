@@ -6,17 +6,20 @@ import { getTestFlightTrackerObject } from './../../../functions/getTestFlightTr
 import { FlightTrackerCard } from './FlightTrackerCard/FlightTrackerCard';
 import css  from './flighttracker.module.css';
 import {FlightContext} from "../../../context/FlightContext";
+import {stringToBoolean} from "../../../functions/StringToBoolean";
 
 
 export const FlightTracker = ({planeRegistration}) => {
 
     const [flightsArray, setFlightsArray] = useState();
     const [reg, setReg] = useState();
-    const { testMode } = useContext(FlightContext);
+
+    const testMode = stringToBoolean(process.env.REACT_APP_TEST_MODE);
 
 
 
-    const getFlights = async (testMode) => {
+
+    const getFlights = async () => {
 
         if (testMode) {
 

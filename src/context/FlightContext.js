@@ -4,6 +4,7 @@ import {useNavigate} from "react-router";
 import {fetchFlightData} from "../api/getFllights";
 import axios from "axios";
 import {AuthContext} from "./AuthContext";
+import {stringToBoolean} from "../functions/StringToBoolean";
 
 export const FlightContext = createContext({});
 
@@ -21,9 +22,7 @@ export const FlightContextProvider = ({ children }) => {
 
     const [wx, setWx] = useState({});
 
-    const testMode = true;
-
-
+    const testMode = stringToBoolean(process.env.REACT_APP_TEST_MODE);
 
     useEffect(()=> {
         if(auth.isAuth){
@@ -51,7 +50,7 @@ export const FlightContextProvider = ({ children }) => {
             const depIcao = flightInfo.apiData[0].departure.airport.icao;
             const arrIcao = flightInfo.apiData[0].arrival.airport.icao;
 
-            const testMode = false;
+            const testMode = stringToBoolean(process.env.REACT_APP_TEST_MODE);
 
             async function fetchWXData(IcaoCodeDep, IcaoCodeArr){
 
