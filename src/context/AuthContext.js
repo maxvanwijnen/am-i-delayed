@@ -115,7 +115,7 @@ function AuthContextProvider({children}){
                     setLoginError('');
                 }
 
-                navigate('/profile');
+                navigate('/');
             })
             .catch((error) => {
                 const errorCode = error.code;

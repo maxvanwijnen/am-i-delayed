@@ -4,43 +4,43 @@ import FlightDataCard from "./FlightDataCard/FlightDataCard";
 import {FlightContext} from "../../../context/FlightContext";
 import SubMenu from "../../Header/SubMenu/SubMenu";
 
+export const FlightData = ({wxInfo}) => {
 
-export const FlightData = ({flightInfo, wxInfo}) => {
+    const flightContext = useContext(FlightContext);
+    const { refreshFlight } = flightContext;
+    const { refreshTime } = flightContext.flightInfo;
 
-    const { refreshFlight } = useContext(FlightContext);
-    const { refreshTime } = useContext(FlightContext).flightInfo;
-    const { status: flightStatus, departure, arrival, number:flNumber} = useContext(FlightContext).flightInfo.apiData[0];
-    const {reg: acReg, model: acModel} = useContext(FlightContext).flightInfo.apiData[0].aircraft;
-    const {name: airline} = useContext(FlightContext).flightInfo.apiData[0].airline;
+    if(!flightContext.flightInfo.apiData || flightContext.flightInfo.apiData.length === 0)
+        return (
+            <>
+            <h1>Let's find your flight!</h1>
+        <div className={css['no-flight-error']}>
+            Please enter your flightnumber in the searchbar and hit search to get started!
+        </div>
+                </>
+    );
 
-    console.log(wxInfo)
+    const { status: flightStatus, departure, arrival, number:flNumber} = flightContext.flightInfo.apiData[0];
+    const {reg: acReg, model: acModel} = flightContext.flightInfo.apiData[0].aircraft;
+    const {name: airline} = flightContext.flightInfo.apiData[0].airline;
 
     return (
-
         <section className={css['flight-data']}>
-            {flightInfo.apiData &&
+            <SubMenu />
+            <div className={css['flight-number-refresh']}>
+                <h2>{flNumber}</h2>
+                <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
+            </div>
+            <div className={css['airline']} >{airline}</div>
+            <div className={css['ac-model']}>{acModel}</div>
+            <div className={css['flight-status']} >{flightStatus}</div>
+            {Object.keys(wxInfo).length > 0 &&
                 <>
-                    <SubMenu />
-                    <div className={css['flight-number-refresh']}>
-                        <h2>{flNumber}</h2>
-                        <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
+                    <div className={css['flight']}>
+                        <FlightDataCard type="departure" flight={departure} wx={wxInfo.dep}/>
+                        <FlightDataCard type="arrival" flight={arrival} wx={wxInfo.arr} />
                     </div>
-                    <div className={css['airline']} >{airline}</div>
-                    <div className={css['ac-model']}>{acModel}</div>
-                    <div className={css['flight-status']} >{flightStatus}</div>
-                    {Object.keys(wxInfo).length > 0 &&
-                        <>
-                        <div className={css['flight']}>
-                            <FlightDataCard type="departure" flight={departure} wx={wxInfo.dep}/>
-                            <FlightDataCard type="arrival" flight={arrival} wx={wxInfo.arr} />
-                        </div>
-
-                        </>
-                    }
                 </>
-            }
-            {!flightInfo.apiData &&
-                <div>Zoek eerst een vlucht</div>
             }
         </section>
     )

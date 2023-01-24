@@ -8,11 +8,13 @@ import Register from "./Register/Register";
 import Profile from "./Profile/Profile";
 import FlightTracker from "./FlightTracker/FlightTracker";
 import Home from './Home/Home';
+import {AuthContext} from "../../context/AuthContext";
 
 
 export const Content = () => {
 
     const {flightId, flightInfo, wx} = useContext(FlightContext);
+    const {auth} = useContext(AuthContext);
 
     function getAircraftReg(flightInfo) {
         try {
@@ -36,10 +38,10 @@ export const Content = () => {
                 <Route path="/register"
                        element={<Register/>}
                 />
-                {flightInfo.apiData && <Route path="/"
-                                              element={<FlightData flightId={ flightId } flightInfo={flightInfo} wxInfo={wx}/>}
+                {auth.isAuth && <Route path="/"
+                                              element={<FlightData wxInfo={wx}/>}
                 />}
-                {!flightInfo.apiData && <Route path="/"
+                {!auth.isAuth && <Route path="/"
                                               element={<Home />}
                 />}
 

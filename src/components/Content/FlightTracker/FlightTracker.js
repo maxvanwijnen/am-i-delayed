@@ -19,8 +19,6 @@ export const FlightTracker = ({planeRegistration}) => {
     const getFlights = async (testMode) => {
 
         if (testMode) {
-            console.log('daaro?')
-            console.log(getTestFlightTrackerObject().data)
 
             const filteredArray = getTestFlightTrackerObject().data.filter(fl => fl.codeshareStatus === "IsOperator");
             setFlightsArray(filteredArray.reverse());

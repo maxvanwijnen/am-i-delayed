@@ -21,7 +21,7 @@ export const FlightContextProvider = ({ children }) => {
 
     const [wx, setWx] = useState({});
 
-    const testMode = false;
+    const testMode = true;
 
 
 
