@@ -48,9 +48,11 @@ REACT_APP_FB_MEASUREMENT_ID=G-PBGDK87Y2E
 4. Maak een .env file in de root van het project
 5. Kopieer het format uit de .env.dist
 6. Vul de variabelen in met gegevens uit het kopje API's hierboven.
-7. Maak een nieuwe build met `npm run build`
-8. Run `npm start` om de applicatie te starten
-9. Ga naar http://localhost:3000 om de applicatie te bekijken
+7. De Variabele TEST_MODE kun je gebruiken om ipv een echte API een voorbeeld Object te gebruiken. Zet deze op true om een voorbeeld object te te gebruiken.
+8. Maak een nieuwe build met `npm run build`
+9. Run `npm start` om de applicatie te starten
+10. Ga naar http://localhost:3000 om de applicatie te bekijken
+11. Wanneer je de TEST MODE aangepast hebt is een herstart van de app nodig. Gebruik hiervoor `ctrl + C` en vervolgens `npm start`
 
 --
 
