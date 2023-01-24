@@ -19,25 +19,25 @@ De externe API's die zijn gebruikt:
 
 Provider: https://rapidapi.com/aedbx-aedbx/api/aerodatabox/
 
-API KEY: 78a9fb5495msh045e43a0f97431ap1dfa12jsn8cadd93e92f2
+API KEY: -
 
 * ### Weather
 Provider: https://api.checkwx.com
 
-API KEY: cc13c7e73d2242d796c396c518
+API KEY: -
 
 * ### FireBase
 Provider: FireBase
 
-REACT_APP_FB_API_KEY=AIzaSyBeEU00YIqGA11BOgdo7aSd9G7oSFRrcEU
-REACT_APP_FB_AUTH_DOMAIN=where-is-my-plane-6e5e7.firebaseapp.com
-REACT_APP_FB_DB_URL=https://where-is-my-plane-6e5e7-default-rtdb.europe-west1.firebasedatabase.app
+REACT_APP_FB_API_KEY=--
+REACT_APP_FB_AUTH_DOMAIN=-
+REACT_APP_FB_DB_URL=-
 
-REACT_APP_FB_PROJECT_ID=where-is-my-plane-6e5e7
-REACT_APP_FB_STORAGE_BUCKET=where-is-my-plane-6e5e7.appspot.com
-REACT_APP_FB_MESSAGING_SENDER_ID=156334592452
-REACT_APP_FB_APP_ID=1:156334592452:web:cbf1b4c75d0302ad659491
-REACT_APP_FB_MEASUREMENT_ID=G-PBGDK87Y2E
+REACT_APP_FB_PROJECT_ID=-
+REACT_APP_FB_STORAGE_BUCKET=-
+REACT_APP_FB_MESSAGING_SENDER_ID=-
+REACT_APP_FB_APP_ID=-
+REACT_APP_FB_MEASUREMENT_ID=-
 
 
 ## Installatie
