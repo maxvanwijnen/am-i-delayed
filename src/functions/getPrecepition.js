@@ -1,12 +1,12 @@
-export const getPrecepition = (conditions) => {
-    let precepitation = '';
+export const getPrecipitation = (conditions) => {
+    let precipitation = '';
 
     if (conditions){
 
         conditions.map((c)=> {
-            precepitation = `${precepitation} -  ${c.text}`;
+            precipitation = `${precipitation} -  ${c.text}`;
         })
-        return precepitation;
+        return precipitation;
     }
 
     return 'None';

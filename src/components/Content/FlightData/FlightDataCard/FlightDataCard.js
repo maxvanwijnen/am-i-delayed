@@ -1,7 +1,7 @@
-import react, {useEffect} from 'react';
+import React from 'react';
 import css from './flightdatacard.module.css';
 import {getWind} from "../../../../functions/getWind";
-import {getPrecepition} from "../../../../functions/getPrecepition";
+import {getPrecipitation} from "../../../../functions/getPrecepition";
 import {getTime} from "../../../../functions/getTime";
 
 
@@ -10,11 +10,9 @@ const FlightDataCard = ({type, flight, wx}) => {
     const { airport, checkInDesk, gate, terminal } = flight;
     const  {temperature, wind, conditions} = wx || {};
 
-    let { actualTimeLocal, actualTimeUtc, scheduledTimeLocal, scheduledTimeUtc} = flight;
+    let { actualTimeLocal, scheduledTimeLocal} = flight;
 
 
-    actualTimeUtc = getTime(actualTimeUtc);
-    scheduledTimeUtc = getTime(actualTimeUtc);
     actualTimeLocal = getTime(actualTimeLocal);
     scheduledTimeLocal = getTime(scheduledTimeLocal);
 
@@ -68,12 +66,8 @@ const FlightDataCard = ({type, flight, wx}) => {
                 <ul>
                     <li>Temp: {temperature.celsius} °C</li>
                     <li>Wind: {getWind(wind.degrees,wind.speed_kph)}</li>
-                    <li>Precipitation: {getPrecepition(conditions)}</li>
+                    <li>Precipitation: {getPrecipitation(conditions)}</li>
                 </ul>
-
-
-
-
 
             </div>
 

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import css from './submenu.module.css';
 import {NavLink} from "react-router-dom";
 import { useLocation } from "react-router-dom";

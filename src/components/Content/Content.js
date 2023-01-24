@@ -13,7 +13,7 @@ import {AuthContext} from "../../context/AuthContext";
 
 export const Content = () => {
 
-    const {flightId, flightInfo, wx} = useContext(FlightContext);
+    const {flightInfo, wx} = useContext(FlightContext);
     const {auth} = useContext(AuthContext);
 
     function getAircraftReg(flightInfo) {
@@ -23,8 +23,6 @@ export const Content = () => {
             return false
         }
     }
-
-
 
     return (
         <main className={css['content']}>

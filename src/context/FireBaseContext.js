@@ -35,7 +35,6 @@ export function FireBaseContextProvider ({children}) {
 
 // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
 
     // Initialize Firebase Authentication and get a reference to the service
     const fbAuth = getAuth(app);

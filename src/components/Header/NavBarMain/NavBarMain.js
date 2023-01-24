@@ -1,4 +1,4 @@
-import react, {useContext} from 'react';
+import React, {useContext} from 'react';
 import css from './navbarmain.module.css';
 import { NavLink } from 'react-router-dom';
 import { HamburgerMenu } from './HamburgerMenu/HamburgerMenu';
@@ -10,7 +10,7 @@ import {AuthContext} from "../../../context/AuthContext";
 
 export const NavBarMain = () => {
 
-    const {auth,funcLogin,funcLogout} = useContext(AuthContext);
+    const {auth,funcLogout} = useContext(AuthContext);
 
     return (
         <nav className={css['nav-bar-main']}>

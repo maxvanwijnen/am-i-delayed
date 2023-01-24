@@ -42,17 +42,18 @@ REACT_APP_FB_MEASUREMENT_ID=G-PBGDK87Y2E
 
 ## Installatie
 
-1. Pak de zip uit
-2. Open een console en ga naar de projectmap
-3. Run `npm install` om de dependencies te installeren
-4. Maak een .env file in de root van het project
-5. Kopieer het format uit de .env.dist
-6. Vul de variabelen in met gegevens uit het kopje API's hierboven.
-7. De Variabele TEST_MODE kun je gebruiken om ipv een echte API een voorbeeld Object te gebruiken. Zet deze op true om een voorbeeld object te te gebruiken.
-8. Maak een nieuwe build met `npm run build`
-9. Run `npm start` om de applicatie te starten
-10. Ga naar http://localhost:3000 om de applicatie te bekijken
-11. Wanneer je de TEST MODE aangepast hebt is een herstart van de app nodig. Gebruik hiervoor `ctrl + C` en vervolgens `npm start`
+1. Installeer NodeJs, hier te downloaden (https://nodejs.org/)
+2. Pak de zip uit
+3. Open een console en ga naar de root van de projectmap
+4. Type `npm install` + `Enter` om de dependencies te installeren
+5. Maak een .env file in de root van het project
+6. Kopieer het format uit de .env.dist
+7. Vul de variabelen in met gegevens uit het kopje API's hierboven.
+8. De Variabele TEST_MODE kun je gebruiken om ipv een echte API een voorbeeld Object te gebruiken. Zet deze op true om een voorbeeld object te te gebruiken.
+9. Maak een nieuwe build met `npm run build`
+10. Run vervolgens `npm start` om de applicatie te starten
+11. Ga naar http://localhost:3000 om de applicatie te bekijken
+12. Wanneer je de TEST MODE aangepast hebt is een herstart van de app nodig. Gebruik hiervoor `ctrl + C` en vervolgens `npm start`
 
 --
 

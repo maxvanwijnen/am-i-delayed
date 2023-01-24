@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
 
-    const {flightId,flightInfo} = useContext(FlightContext);
+    const {flightInfo} = useContext(FlightContext);
 
     return (
         <>
