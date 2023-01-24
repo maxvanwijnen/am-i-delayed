@@ -1,6 +1,7 @@
 import css from  './AirportData.module.css';
 import React from 'react';
 import {renderApiValue} from "../../../../../functions/renderApiValue";
+import {getTime} from "../../../../../functions/getTime";
 
 export const AirportData = ({fl, type}) => {
 
@@ -24,11 +25,11 @@ export const AirportData = ({fl, type}) => {
                 <div>
                     <div>
                         <h6 className={css['label']}>{event}</h6>
-                        <div className={css['time']}>{renderApiValue(fl.actualTimeLocal)}</div>
+                        <div className={css['time']}>{getTime(renderApiValue(fl.actualTimeLocal))}</div>
                     </div>
                     <div>
                         <h6 className={css['label']}>Scheduled</h6>
-                        <div className={css['time']}>{renderApiValue(fl.scheduledTimeLocal)}</div>
+                        <div className={css['time']}>{getTime(renderApiValue(fl.scheduledTimeLocal))}</div>
                     </div>
                 </div>
             </div>

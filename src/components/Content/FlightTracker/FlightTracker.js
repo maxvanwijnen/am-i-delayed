@@ -7,6 +7,7 @@ import { FlightTrackerCard } from './FlightTrackerCard/FlightTrackerCard';
 import css  from './flighttracker.module.css';
 import {FlightContext} from "../../../context/FlightContext";
 import {stringToBoolean} from "../../../functions/StringToBoolean";
+import EmptyPageMessage from "../../EmptyPageMessage/EmptyPageMessage";
 
 
 export const FlightTracker = ({planeRegistration}) => {
@@ -28,7 +29,6 @@ export const FlightTracker = ({planeRegistration}) => {
 
             return;
         }
-
 
         const options = {
             method: 'GET',
@@ -62,7 +62,12 @@ export const FlightTracker = ({planeRegistration}) => {
     return (
         <section className={css['flight-tracker']}>
             <SubMenu />
-            { flightsArray ? flightsArray.map((fl) => (<FlightTrackerCard key={fl.number} fl={fl} />)):<div>Loading..</div>}
+            { flightsArray ? flightsArray.map((fl) => (<FlightTrackerCard key={fl.number} fl={fl} />)):
+
+                    <EmptyPageMessage title="No Tracking data available">
+                            Unfortunately there is no tracking available for this flight.
+                    </EmptyPageMessage>
+                }
 
         </section>
     )

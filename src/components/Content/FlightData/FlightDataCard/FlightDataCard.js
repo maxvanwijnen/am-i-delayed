@@ -2,16 +2,8 @@ import react, {useEffect} from 'react';
 import css from './flightdatacard.module.css';
 import {getWind} from "../../../../functions/getWind";
 import {getPrecepition} from "../../../../functions/getPrecepition";
+import {getTime} from "../../../../functions/getTime";
 
-const getTime = (dateTime) => {
-    if (dateTime){
-        return dateTime.substring(10,16);
-    }
-    else {
-        return 'Unknown';
-    }
-
-}
 
 const FlightDataCard = ({type, flight, wx}) => {
 

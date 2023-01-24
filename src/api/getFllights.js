@@ -57,5 +57,3 @@ export const fetchFlightData = async (flightId, setFlightInfo, flightInfo, testM
     }
 
 }
-
-export default fetchFlightData();

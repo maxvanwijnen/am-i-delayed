@@ -4,6 +4,7 @@ import FlightDataCard from "./FlightDataCard/FlightDataCard";
 import {FlightContext} from "../../../context/FlightContext";
 import SubMenu from "../../Header/SubMenu/SubMenu";
 import {TimestampToDateTime} from "../../../functions/TimestampToDateTime";
+import EmptyPageMessage from "../../EmptyPageMessage/EmptyPageMessage";
 
 
 export const FlightData = ({wxInfo}) => {
@@ -14,12 +15,9 @@ export const FlightData = ({wxInfo}) => {
 
     if(!flightContext.flightInfo.apiData || flightContext.flightInfo.apiData.length === 0)
         return (
-            <>
-            <h1>Let's find your flight!</h1>
-        <div className={css['no-flight-error']}>
-            Please enter your flightnumber in the searchbar and hit search to get started!
-        </div>
-                </>
+          <EmptyPageMessage title="Let's find your flight!">
+              Please enter your flightnumber in the searchbar and hit search to get started!
+          </EmptyPageMessage>
     );
 
     const { status: flightStatus, departure, arrival, number:flNumber} = flightContext.flightInfo.apiData[0];

@@ -48,12 +48,19 @@ export const Content = () => {
 
 
 
-              {
+                {
                     getAircraftReg(flightInfo) &&
                     <Route path="/flight-tracker"
                            element={<FlightTracker planeRegistration={flightInfo.apiData[0].aircraft.reg}/>}
                     />
                 }
+                {
+                    !getAircraftReg(flightInfo) &&
+                    <Route path="/flight-tracker"
+                           element={<FlightTracker planeRegistration="" />}
+                    />
+                }
+
 
             </Routes>
 
