@@ -146,8 +146,6 @@ function AuthContextProvider({children}){
                         displayError= 'Please check your credentials'
                 }
 
-
-                console.log('helaas'+error.message  + ' : '+ error.code)
                 setLoginError(displayError);
             });
 
@@ -168,7 +166,6 @@ function AuthContextProvider({children}){
             // An error happened.
         });
 
-        console.log('Je bent uitgelogd');
         navigate('/');
     }
 

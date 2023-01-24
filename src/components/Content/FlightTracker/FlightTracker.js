@@ -39,12 +39,11 @@ export const FlightTracker = ({planeRegistration}) => {
 
         try {
             const response = await axios.request(options);
-            console.log('response')
-            console.log(response);
+
             const filteredArray = response.data.filter(fl => fl.codeshareStatus === "IsOperator");
             setFlightsArray(filteredArray.reverse());
         } catch (error) {
-            console.log('kwam er een error?');
+
             console.error(error);
         }
     }

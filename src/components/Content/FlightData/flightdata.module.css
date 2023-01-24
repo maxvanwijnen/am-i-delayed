@@ -9,6 +9,7 @@
     width: 100%;
     display:flex ;
     justify-content: space-between;
+    align-items: center;
 }
 
 .flight-number-refresh {
@@ -23,6 +24,15 @@
     font-weight: bold;
     border:0px
 }
+
+.refresh-button .label {
+    font-weight: bold;
+    font-size: 18px;
+}
+.refresh-button .descr {
+    font-size: 12px;
+}
+
 h2 {
     font-size: 32px;
     margin-bottom: 0px;
@@ -47,9 +57,18 @@ h2 {
 
 }
 
+.plane-img {
+    height: 220px;
+    width: auto;
+}
+
 @media only screen and (max-width: 800px) {
     .flight-data .flight {
         flex-direction: column;
         align-items: center;
+    }
+    .plane-img {
+        transform:rotate(270deg);
+        height: 200px;
     }
 }

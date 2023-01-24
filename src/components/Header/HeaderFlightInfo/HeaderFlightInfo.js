@@ -10,7 +10,6 @@ export const HeaderFlightInfo = ({ setDisplayMode }) => {
     const {status, number: flightId, airline} = useContext(FlightContext).flightInfo.apiData[0];
 
 
-
     return (
         <section className={css['header-flight-info-wrapper']}>
             <div className={css['header-flight-info']}>

@@ -3,8 +3,6 @@ export const getPrecepition = (conditions) => {
 
     if (conditions){
 
-        console.log('asdasd')
-        console.log(conditions)
         conditions.map((c)=> {
             precepitation = `${precepitation} -  ${c.text}`;
         })

@@ -28,8 +28,5 @@ export const getWind = (direction, velocity) => {
         dirText = "Invalid direction"
     }
 
-
-    console.log(dirText)
-
     return `${dirText} ${velocity} km/h`
 }

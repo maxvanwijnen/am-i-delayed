@@ -3,6 +3,8 @@ import css from "./flightdata.module.css";
 import FlightDataCard from "./FlightDataCard/FlightDataCard";
 import {FlightContext} from "../../../context/FlightContext";
 import SubMenu from "../../Header/SubMenu/SubMenu";
+import {TimestampToDateTime} from "../../../functions/TimestampToDateTime";
+
 
 export const FlightData = ({wxInfo}) => {
 
@@ -29,7 +31,10 @@ export const FlightData = ({wxInfo}) => {
             <SubMenu />
             <div className={css['flight-number-refresh']}>
                 <h2>{flNumber}</h2>
-                <button className={css['refresh-button']} onClick={()=>refreshFlight()}>Refresh ({refreshTime})</button>
+                <button className={css['refresh-button']} onClick={()=>refreshFlight()}>
+                    <div className={css['label']}>Refresh</div>
+                    <div className={css['descr']}>(Last update: {TimestampToDateTime(refreshTime)})</div>
+                </button>
             </div>
             <div className={css['airline']} >{airline}</div>
             <div className={css['ac-model']}>{acModel}</div>
@@ -38,6 +43,7 @@ export const FlightData = ({wxInfo}) => {
                 <>
                     <div className={css['flight']}>
                         <FlightDataCard type="departure" flight={departure} wx={wxInfo.dep}/>
+                        <img src="/img/plane-on-route.png" className={css['plane-img']} alt="plane icon" />
                         <FlightDataCard type="arrival" flight={arrival} wx={wxInfo.arr} />
                     </div>
                 </>

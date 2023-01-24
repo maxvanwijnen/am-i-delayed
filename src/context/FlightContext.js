@@ -263,9 +263,7 @@ export const FlightContextProvider = ({ children }) => {
         })
     }
     const refreshFlight = () => {
-        setFlight({
-            ...flight
-        })
+        updateFlightId(flight.flightId)
     }
 
 
