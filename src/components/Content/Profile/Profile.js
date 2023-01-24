@@ -81,7 +81,7 @@ export const Profile = () => {
                    name="email"
                    value={fields.email}
                    onChange={(e)=>updateField(e)}
-            /><label htmlFor="email">Email</label>
+            />
 
 
 

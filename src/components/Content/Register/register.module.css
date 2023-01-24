@@ -1,10 +1,57 @@
 .login-form {
     display: flex;
     flex-direction: column;
+
+}
+
+.login-form p {
+    line-height: 24px;
+    text-align: center;
 }
 
 .login-form form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    background-color: #F9FDFF;
+    border:1px solid #D4F3FF;
+    width: 100%;
+    padding:20px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.login-form form .input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper input {
+    margin-top: 0px;
+}
+
+.login-error {
+    background-color: #ffc6c6;
+    color: #540e0e;
+    border: 1px solid #c99f9f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    background-color: #D25454;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+form input, button {
+    width: 300px;
+    margin:10px 0px;
+}
+
+form button {
+    background-color: var(--color-blue);
+    color: white;
+    width:300px;
+    font-size: 18px;
+    border: 0px;
 }

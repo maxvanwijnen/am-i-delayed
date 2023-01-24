@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <section className={css['home']}>
             <h1>Welcome to Flight Finder</h1>
-            <p>
+            <p className="intro">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam labore magnam minus nulla officia quae qui quidem vel vero voluptates? At blanditiis deserunt facere facilis fugiat fugit maiores non nulla quae quod sint tempora voluptatem, voluptates? Accusamus amet animi asperiores consequuntur dignissimos doloribus dolorum eligendi eos error eum ex fugit impedit itaque iusto nam neque nesciunt odio odit perferendis, quae, quo reprehenderit saepe sapiente sequi similique sit, tempore unde voluptates!
             </p>
 
